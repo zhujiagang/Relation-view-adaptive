@@ -46,7 +46,8 @@ class view_adaptive_fc(nn.Module):
                     3,
                     kernel_size= (1, 1),
                     padding=(0, 0),
-                    stride=1)
+                    stride=1),
+            nn.Tanh()
         )
         cnt = 0
         for conv in self.trans_fc:
@@ -77,7 +78,7 @@ class view_adaptive_fc(nn.Module):
         trans = self.trans_fc(xx).permute(0, 2, 3, 1).contiguous().view(-1, 3).unsqueeze(1).repeat(1, V, 1)
         rotate = self.rotate_fc(xx).permute(0, 2, 3, 1).contiguous() #xx[:, :3]# * math.pi/180.0
 
-        rotate.clamp(max=math.pi, min=-math.pi)
+        rotate = rotate * math.pi
 
         cos_ = torch.cos(rotate)
         sin_ = torch.sin(rotate)

@@ -94,7 +94,7 @@ def get_parser():
         help='the arguments of model')
     parser.add_argument(
         '--weights',
-        default=None,
+        default="./work_dir/NTU-RGB-D/xview/ST_GCN_dilation/epoch25_model.pt",
         help='the weights for network initialization')
     parser.add_argument(
         '--ignore-weights',
@@ -128,7 +128,7 @@ def get_parser():
     parser.add_argument(
         '--start-epoch',
         type=int,
-        default=0,
+        default=25,
         help='start training from which epoch')
     parser.add_argument(
         '--num-epoch',
