@@ -23,6 +23,7 @@ class view_adaptive_fc(nn.Module):
                 kernel_size= (9, 1),
                 padding=(4, 0),
                 stride=1),
+            nn.BatchNorm2d(3 * 25),
             nn.ReLU(),
             nn.Conv2d(
                     3*25,
@@ -38,6 +39,7 @@ class view_adaptive_fc(nn.Module):
                 kernel_size= (9, 1),
                 padding=(4, 0),
                 stride=1),
+            nn.BatchNorm2d(3 * 25),
             nn.ReLU(),
             nn.Conv2d(
                     3*25,

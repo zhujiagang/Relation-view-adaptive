@@ -13,7 +13,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.autograd import Variable
 import random
-os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,4"
+os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,3"
 
 def get_parser():
 
