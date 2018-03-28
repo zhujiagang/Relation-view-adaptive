@@ -20,16 +20,14 @@ class view_adaptive_fc(nn.Module):
             nn.Conv2d(
                 3*25,
                 3*25,
-                kernel_size= (1, 1),
-                dilation = (1, 1),
-                padding=(0, 0),
+                kernel_size= (9, 1),
+                padding=(4, 0),
                 stride=1),
             nn.ReLU(),
             nn.Conv2d(
                     3*25,
                     3,
                     kernel_size= (1, 1),
-                    dilation = (1, 1),
                     padding=(0, 0),
                     stride=1)
         )
@@ -37,16 +35,14 @@ class view_adaptive_fc(nn.Module):
             nn.Conv2d(
                 3*25,
                 3*25,
-                kernel_size= (1, 1),
-                dilation = (1, 1),
-                padding=(0, 0),
+                kernel_size= (9, 1),
+                padding=(4, 0),
                 stride=1),
             nn.ReLU(),
             nn.Conv2d(
                     3*25,
                     3,
                     kernel_size= (1, 1),
-                    dilation = (1, 1),
                     padding=(0, 0),
                     stride=1)
         )

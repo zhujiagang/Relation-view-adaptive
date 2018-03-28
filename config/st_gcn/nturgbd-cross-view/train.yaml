@@ -10,7 +10,7 @@ train_feeder_args:
   random_choose: False
   random_shift: False
   random_move: False
-  random_view_transform: True
+  random_view_transform: False
 test_feeder_args:
   mode: test
   window_size: 300
