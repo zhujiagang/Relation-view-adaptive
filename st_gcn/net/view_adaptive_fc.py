@@ -77,6 +77,8 @@ class view_adaptive_fc(nn.Module):
         trans = self.trans_fc(xx).permute(0, 2, 3, 1).contiguous().view(-1, 3).unsqueeze(1).repeat(1, V, 1)
         rotate = self.rotate_fc(xx).permute(0, 2, 3, 1).contiguous() #xx[:, :3]# * math.pi/180.0
 
+        rotate.clamp(max=math.pi, min=-math.pi)
+
         cos_ = torch.cos(rotate)
         sin_ = torch.sin(rotate)
 
